@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* .main{
+    position: relative;
+    width: 102%;
+    height: 630px;
+    background-color: rgb(215, 210, 210);
+    top: -55px;
+    margin: -8px;
+
+} */
+
+
+
+
+
+   *{ 
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0; 
+    }
+    .toggle{ 
+        background-color: black;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .loo{
+        font-size: 30px;
+        font-weight: bold;
+        
+
+    }
+
+    ul{
+
+    list-style: none;
+    gap: 15px;
+    display: flex;
+    
+    
+    }
+
+    ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    ul li a:hover{
+        background-color: rgba(96, 108, 104, 0.756);
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #cbox{
+        display: none;
+    }
+    .hi{
+        display: none;
+        cursor: pointer;
+        font-size: 18px;
+
+    }
+
+    @media (max-width:768px){
+           .toggle ul{
+                display: none;
+                flex-direction: column;
+                background-color: black;
+                position: absolute;
+                top: 47px;
+                right: 0;
+                width: 200px;
+            }
+            .toggle ul li{
+                border-bottom: 1px solid rgb(136, 26, 26);
+            }
+            
+            .hi{
+                display: block;
+            }
+            #cbox:checked ~ ul{
+                display: flex;
+            }
+
+        }
+    .sub{
+    margin-top: 140px;
+    margin-left: 90px;
+    width: 550px;
+    height:250px;
+    /* background-color: rgba(1, 165, 165, 0.372); */
+    position: absolute;
+}
+
+h1{
+    margin-left: 30px;
+    
+}
+.p1{
+    margin-left: 150px;
+    margin-top: -33px;
+    font-size: 33px;
+    color: orangered;
+
+}
+
+
+h3{
+    margin-left: 30px;
+     margin-top: 23px;
+
+}
+
+
+.p2{
+    margin-left: 30px;
+    margin-top: 2px;
+    font-size: 15px;
+
+}
+
+
+.sd{
+    margin-left: 700px;
+    margin-top: 50px;
+    border-radius: 360px;
+    background-color: blue;
+    width:  400px;
+    height: 400px;
+    
+} 
+
+.imj{
+    border-radius: 360px;
+    
+}
+
+footer{
+    background-color: black;
+    color: white;
+    height: 33px;
+    margin-top: 50px;
+
+}
+
+</style>
+<body onload="alert('Welcomen To My Mini portfolio')">
+
+
+
+    
+    <div class="main" >
+         <nav class="toggle">
+        <div class="loo">
+            JOBIN JOSEPH
+        </div>
+        <input type="checkbox" id="cbox">
+        <label for="cbox" class="hi">&#9776</label>
+
+            <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="tasktraker.html">Tasktraker</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="about.html">About</a></li>
+         <li><a href="contactform.html">ContactForm</a></li>
+            </ul>
+
+             </nav>  
+
+
+        <div class="sub">
+<h1>haii all</h1>
+<p class="p1">IAM JOBIN JOSEPH</p>
+
+<h3>Creative Web Designer</h3><br>
+<p class="p2">
+Iam a creative web designer passionate about building <br>
+innovative digital experiences. With a focus on clean<br>
+ design, intuitive user experiences, and the latest<br>
+  web technologies, I help brands and businesses transform<br>
+   their online presence. Whether you're looking to revamp your <br>
+   current site or build something from the ground up, I’m here to<br> 
+   bring your  ideas to life. Let’s create something amazing together!</p>
+        </div>
+
+        <div class="sd">
+            <img src="photo_2025-04-26_02-05-46.jpg" alt="" width="400" height="400px" class="imj">
+
+
+
+
+        </div>
+
+        <footer><center>websites</center></footer>
+    </div>
+</body>
+</html>
