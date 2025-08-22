@@ -1,56 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    body {
+      background-color: lemonchiffon;
+    }
+    table {
+      margin-left: 350px;
+      margin-top: 90px;
+      background-color: antiquewhite;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    button {
+      background-color: rgb(0, 146, 225);
+      border-radius: 20px;
+      padding: 5px 15px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
-<body style="background-color: lemonchiffon;">
-    <table border="5px"  style="margin-left: 350px; margin-top: 90px; background-color: antiquewhite;">
-        <tr><td>
-    <form style="margin-left: 50px;">
-<h1>CONTACT FORM</h1>
-    
-        <label>FULL NAME:</label>
-        <input type="text"><br><br>
+<body>
+  <table border="5px">
+    <tr>
+      <td>
+        <form id="contactForm" style="margin-left: 50px;">
+          <h1>CONTACT FORM</h1>
 
-        <label>EMAIL:</label>
-        <input type="email"><br><br>
+          <label>FULL NAME:</label>
+          <input type="text" class="form-input" name="name">
+          <span class="error"></span>
+          <br><br>
 
-        <label>AGE:</label>
-        <input type="number"><br><br>
+          <label>EMAIL:</label>
+          <input type="email" class="form-input" name="email">
+          <span class="error"></span>
+          <br><br>
 
-        <label>DATE OF BIRTH:</label>
-        <input type="date"><br><br>
+          <label>AGE:</label>
+          <input type="number" class="form-input" name="age">
+          <span class="error"></span>
+          <br><br>
 
-        <label>UPLOAD RESUME:</label>
-        <input type="file"><br><br>
+          <label>DATE OF BIRTH:</label>
+          <input type="date" class="form-input" name="dob">
+          <span class="error"></span>
+          <br><br>
 
-       
-         <label>PHONE NUMBER:</label>
-        <input type="number"><br><br>
+          <label>UPLOAD RESUME:</label>
+          <input type="file" class="form-input" name="resume">
+          <span class="error"></span>
+          <br><br>
 
+          <label>PHONE NUMBER:</label>
+          <input type="number" class="form-input" name="phone">
+          <span class="error"></span>
+          <br><br>
 
-       
+          <label>MESSAGE:</label>
+          <textarea class="form-input" name="message"></textarea>
+          <span class="error"></span>
+          <br><br>
 
-                <button id="RESET" value="RESET" style="background-color:
-                 rgb(0, 146, 225); color: blackv; border-radius: 20px;">RESET</button>
-                <button id="button" onclick="alert('FORM SENDED')" style="background-color:
-                 rgb(0, 146, 225); color: blackv; border-radius: 20px;">SEND</button>
-                  
-<!-- <button><a href="Main.html" style="text-decoration: none;">back</a></button> -->
-    
-        
+          <button type="reset">RESET</button>
+          <button type="submit">SEND</button>
+          <button><a href="Main.html" style="text-decoration: none; background-color: black; color: white;">back</a></button> 
 
-
-
-    
-    </form>
-    </td>
+        </form>
+      </td>
     </tr>
-    </table>
+  </table>
 
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let valid = true;
 
+      const inputs = document.querySelectorAll(".form-input");
+      const errors = document.querySelectorAll(".error");
+
+      errors.forEach(error => error.textContent = "");
+
+      inputs.forEach((input, index) => {
+        let value = input.value.trim();
+        let fieldName = input.name;
+        let errorField = errors[index];
+
+        if (value === "") {
+          errorField.textContent = fieldName.toUpperCase() + " is required";
+          valid = false;
+        } else {
+          if (fieldName === "email") {
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!value.match(emailPattern)) {
+              errorField.textContent = "Enter a valid email";
+              valid = false;
+            }
+          }
+          if (fieldName === "phone" && value.length !== 10) {
+            errorField.textContent = "Phone must be 10 digits";
+            valid = false;
+          }
+          if (fieldName === "age" && value < 18) {
+            errorField.textContent = "Age must be 18 or above";
+            valid = false;
+          }
+        }
+      });
+
+      if (valid) {
+        alert("Form submitted successfully ✅");
+        document.getElementById("contactForm").reset();
+      }
+    }); 
+  </script>
 </body>
 </html>

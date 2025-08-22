@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: rgb(187, 169, 235);">
-<h1> to my personal project <br></h1>
-Explore my work, skills, and achievements in a concise and visually appealing format. Get a glimpse of my expertise and creativity    
- <br><br>
-<!-- <button><a href="Main.html" style="text-decoration: none;">back</a></button> -->
+
+<body style="background-color: black;">
+    <h1
+        style="align-items: center; color: greenyellow; font-size: 50px; margin-left: 530px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Skills</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <section id="skills" class="fade-in">
+        <h2 class="text-center">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-wind"></i>
+                <p>Tailwind</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-node-js"></i>
+                <p>Node.js</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <p>MongoDB</p>
+            </div>
+            <button><a href="Main.html" style="text-decoration: none; background-color: black; color: white;">back</a></button> 
+
+        </div>
+    </section>
+
+    <script>
+        window.onload = function () {
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('show');
+                }, index * 400);
+            });
+        };
+    </script>
+
 </body>
+
 </html>
